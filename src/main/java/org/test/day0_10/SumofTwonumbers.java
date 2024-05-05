@@ -6,5 +6,5 @@ package org.test.day0_10;
 public class SumofTwonumbers {
     public int solution(int num1, int num2) {
         return num1+num2;
-    }
+    } 
 }
