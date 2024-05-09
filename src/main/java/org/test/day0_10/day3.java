@@ -73,4 +73,15 @@ public class day3 {
 
         return result;
     }
+
+    public double solution5 (int[] numbers) {
+
+
+
+        double answer = 0;
+
+        OptionalDouble average = Arrays.stream(numbers).average();
+
+        return answer;
+    }
 }
