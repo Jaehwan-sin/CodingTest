@@ -1,5 +1,7 @@
 package org.test.day0_10;
 
+import java.util.Scanner;
+
 public class day6 {
 
     // 문자열 my_string이 매개변수로 주어집니다.
@@ -11,9 +13,20 @@ public class day6 {
 
     // "*"의 높이와 너비를 1이라고 했을 때, "*"을 이용해 직각 이등변 삼각형을 그리려고합니다.
     // 정수 n 이 주어지면 높이와 너비가 n 인 직각 이등변 삼각형을 출력하도록 코드를 작성해보세요.
-    public String solution2 (String my_string) {
-        StringBuilder sb = new StringBuilder(my_string);
-        return sb.reverse().toString();
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i+1; j++) {
+                System.out.println("*");
+            }
+            System.out.println();
+        }
+
+        
     }
 
 }
