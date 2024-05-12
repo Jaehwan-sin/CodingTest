@@ -2,50 +2,39 @@ package org.test.day0_10;
 
 import java.util.Scanner;
 
-public class day6 {
+public class day7 {
 
-    // 문자열 my_string이 매개변수로 주어집니다.
-    // my_string을 거꾸로 뒤집은 문자열을 return하도록 solution 함수를 완성해주세요.
-    public String solution(String my_string) {
-        StringBuilder sb = new StringBuilder(my_string);
-        return sb.reverse().toString();
+    // 문자열 my_string과 문자 letter이 매개변수로 주어집니다.
+    // my_string에서 letter를 제거한 문자열을 return하도록 solution 함수를 완성해주세요.
+    public String solution(String my_string, String letter) {
+        return my_string.replace(letter, "");
     }
 
-    // "*"의 높이와 너비를 1이라고 했을 때, "*"을 이용해 직각 이등변 삼각형을 그리려고합니다.
-    // 정수 n 이 주어지면 높이와 너비가 n 인 직각 이등변 삼각형을 출력하도록 코드를 작성해보세요.
-    public String solution2() {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+    // 각에서 0도 초과 90도 미만은 예각, 90도는 직각, 90도 초과 180도 미만은 둔각 180도는 평각으로 분류합니다.
+    // 각 angle이 매개변수로 주어질 때 예각일 때 1, 직각일 때 2, 둔각일 때 3, 평각일 때 4를 return하도록 solution 함수를 완성해주세요.
+    // 예각 : 0 < angle < 90 직각 : angle = 90 둔각 : 90 < angle < 180 평각 : angle = 180
+    public int solution(int angle) {
+        int answer = 0;
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < i+1; j++) {
-                System.out.println("*");
-            }
-            System.out.println();
+        if (0 < angle && angle < 90) {
+            answer = 1;
+        } else if (angle == 90) {
+            answer = 2;
+        } else if (90 < angle && angle < 180) {
+            answer = 3;
+        } else if (angle == 180) {
+            answer = 4;
         }
 
-        return null;
-    }
-    // 정수가 담긴 리스트 num_list가 주어질 때,
-    // num_list의 원소 중 짝수와 홀수의 개수를 담은 배열을 return 하도록 solution 함수를 완성해보세요.
-    public int[] solution3 (int[] num_list) {
-        int[] answer = new int[2];
-
-        for (int num : num_list) {
-            if (num % 2 == 0) {
-                answer[0]++;
-            } else {
-                answer[1]++;
-            }
-        }
         return answer;
     }
 
-    // 문자열 my_string과 정수 n이 매개변수로 주어질 때,
-    // my_string에 들어있는 각 문자를 n만큼 반복한 문자열을 return 하도록 solution 함수를 완성해보세요.
-    public String solution4 (String my_string, int n) {
-        String answer = "";
-
+//    머쓱이네 양꼬치 가게는 10인분을 먹으면 음료수 하나를 서비스로 줍니다.
+//    양꼬치는 1인분에 12,000원, 음료수는 2,000원입니다. 정수 n과 k가 매개변수로 주어졌을 때,
+//    양꼬치 n인분과 음료수 k개를 먹었다면 총얼마를 지불해야 하는지 return 하도록 solution 함수를 완성해보세요.
+    public int solution3 (int n, int k) {
+        int answer = 0;
+        answer = (12000 * n) + ((k-(n/10)) * 2000);
         return answer;
     }
 }
