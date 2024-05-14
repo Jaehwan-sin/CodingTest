@@ -35,4 +35,32 @@ public class a_2480 {
             System.out.println(m * 100);
         }
     }
+
+    // 다른 풀이 과정
+    public static void main2 (String[] args) {
+        // 1. 같은 값이 3개면 10000 + a * 1000
+        // 2. 같은 값이 2개면 1000 + a * 100
+        // 3. 모두 다른 눈이 나오는 경우 ( 가장 큰 수 ) * 100
+
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        int sum = 0;
+
+        if (a == b && b== c && a == c) {
+            System.out.println(10000 + (a * 1000));
+        } else if (a == b || a == c) {
+            System.out.println(1000 + (a * 100));
+        } else if (b == c) {
+            System.out.println(1000 + (a * 100));
+        } else {
+            int z = Math.max(a,b); // Math 함수 이용 가장 큰 값 비교
+            z = Math.max(z, c); // 비교한 값을 c 랑 또 비교한다.
+            sum = z * 100;
+            System.out.println(sum);
+        }
+    }
 }
