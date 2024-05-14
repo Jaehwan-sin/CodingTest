@@ -2,55 +2,76 @@ package org.test.day0_10;
 
 import java.util.Arrays;
 
-public class day8 {
+public class day9 {
 
-    // 정수 배열 numbers와 정수 num1, num2가 매개변수로 주어질 때,
-    // numbers의 num1번 째 인덱스부터 num2번째 인덱스까지 자른 정수 배열을 return 하도록 solution 함수를 완성해보세요.
-    public int[] solution (int[] numbers, int num1, int num2) {
-        int[] answer = new int[numbers.length];
-        return Arrays.copyOfRange(numbers, num1, num2 + 1);
+    // 개미 군단이 사냥을 나가려고 합니다.
+    // 개미군단은 사냥감의 체력에 딱 맞는 병력을 데리고 나가려고 합니다.
+    // 장군개미는 5의 공격력을, 병정개미는 3의 공격력을 일개미는 1의 공격력을 가지고 있습니다.
+    // 예를 들어 체력 23의 여치를 사냥하려고 할 때, 일개미 23마리를 데리고 가도 되지만,
+    // 장군개미 네 마리와 병정개미 한 마리를 데리고 간다면 더 적은 병력으로 사냥할 수 있습니다.
+    // 사냥감의 체력 hp가 매개변수로 주어질 때,
+    // 사냥감의 체력에 딱 맞게 최소한의 병력을 구성하려면 몇 마리의 개미가 필요한지를 return하도록 solution 함수를 완성해주세요.
+    public int solution (int hp) {
+        int cnt = 0;
+
+        cnt += (hp / 5);
+        hp %= 5;
+
+        cnt += (hp / 3);
+        hp %= 3;
+
+        cnt += (hp / 1);
+
+        return cnt;
     }
 
-    // 우주여행을 하던 머쓱이는 엔진 고장으로 PROGRAMMERS-962 행성에 불시착하게 됐습니다.
-    // 입국심사에서 나이를 말해야 하는데, PROGRAMMERS-962 행성에서는 나이를 알파벳으로 말하고 있습니다.
-    // a는 0, b는 1, c는 2, ..., j는 9입니다. 예를 들어 23살은 cd, 51살은 fb로 표현합니다.
-    // 나이 age가 매개변수로 주어질 때 PROGRAMMER-962식 나이를 return하도록 solution 함수를 완성해주세요.
-    public String solution2 (int age) {
-        String answer = "";
-        String[] Alpha = new String[]{"a","b","c","d","e","f","g","h","i","j"};
+    // 머쓱이는 친구에게 모스부호를 이용한 편지를 받았습니다.
+    // 그냥은 읽을 수 없어 이를 해독하는 프로그램을 만들려고 합니다.
+    // 문자열 letter가 매개변수로 주어질 때, letter를 영어 소문자로 바꾼 문자열을 return 하도록 solution 함수를 완성해보세요.
+    // 모스부호는 다음과 같습니다.
+    // morse = {
+    //    '.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f',
+    //    '--.':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l',
+    //    '--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r',
+    //    '...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x',
+    //    '-.--':'y','--..':'z'
+    // }
+    public String solution(String letter) {
+            String[] morse = {".-","-...","-.-.","-..",".","..-.",
+                    "--.","....","..",".---","-.-",".-..","--","-.",
+                    "---",".--.","--.-",".-.","...","-","..-","...-",
+                    ".--","-..-","-.--","--.."};
+            String[] morseString;
+            morseString = letter.split(" ");
 
-        while(age>0) {
-            answer = Alpha[age % 10] + answer;
-            age /= 10;
-        }
-
-        return answer;
-    }
-
-    // 외과의사 머쓱이는 응급실에 온 환자의 응급도를 기준으로 진료 순서를 정하려고 합니다.
-    // 정수 배열 emergency가 매개변수로 주어질 때 응급도가 높은 순서대로 진료 순서를 정한 배열을 return하도록 solution 함수를 완성해주세요.
-    public int[] solution3 (int[] emergency) {
-        int[] answer = new int[emergency.length];
-        for (int i = 0; i < emergency.length; i++) {
-            for (int j = 0; j < emergency.length; j++) {
-                if (emergency[i] <= emergency[j]) {
-                    answer[i] += 1;
+            StringBuilder sb = new StringBuilder();
+            for (String word : morseString) {
+                for (int i = 0; i < morse.length; i++) {
+                    if (word.equals(morse[i])) sb.append(Character.toString(i + 'a'));
                 }
             }
+            return sb.toString();
         }
-        return answer;
-    }
 
-    // 순서쌍이란 두 개의 숫자를 순서를 정하여 짝지어 나타낸 쌍으로 (a, b)로 표기합니다.
-    // 자연수 n이 매개변수로 주어질 때 두 숫자의 곱이 n인 자연수 순서쌍의 개수를 return하도록 solution 함수를 완성해주세요.
-    public int solution4 (int n) {
-        int answer = 0;
-        for (int i = 1; i <= n; i++) {
-            if (n % i == 0) {
+        // 가위는 2 바위는 0 보는 5로 표현합니다.
+        // 가위 바위 보를 내는 순서대로 나타낸 문자열 rsp가 매개변수로 주어질 때,
+        // rsp에 저장된 가위 바위 보를 모두 이기는 경우를 순서대로 나타낸 문자열을 return하도록 solution 함수를 완성해보세요.
+        public String solution3 (String rsp) {
+            String answer = "";
+            String[] arr = rsp.split("");
 
-                answer += 1;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i].equals("2")) {
+                    answer += "0";
+                } else if (arr[i].equals("0")) {
+                    answer += "5";
+                } else {
+                    answer += "2";
+                }
             }
+
+            return answer;
         }
-        return answer;
-    }
+
+        √
 }
