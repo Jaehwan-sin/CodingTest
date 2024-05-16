@@ -41,4 +41,31 @@ public class day10 {
 
         return answer;
     }
+
+    // 머쓱이는 친구들과 동그랗게 서서 공 던지기 게임을 하고 있습니다.
+    // 공은 1번부터 던지며 오른쪽으로 한 명을 건너뛰고 그 다음 사람에게만 던질 수 있습니다.
+    // 친구들의 번호가 들어있는 정수 배열 numbers와 정수 K가 주어질 때,
+    // k번째로 공을 던지는 사람의 번호는 무엇인지 return 하도록 solution 함수를 완성해보세요.
+    public int solution3 (int[] numbers, int k) {
+        return numbers[2 * (k - 1) % numbers.length];
+    }
+
+    // 정수가 담긴 배열 numbers와 문자열 direction가 매개변수로 주어집니다.
+    // 배열 numbers의 원소를 direction방향으로 한 칸씩 회전시킨 배열을 return하도록 solution 함수를 완성해주세요.
+    public int[] solution4 (int[] numbers, String direction) {
+        int[] answer = new int[numbers.length];
+
+        if(direction.equals("right")){
+            for(int i = 0; i < answer.length - 1; i++){
+                answer[i + 1] = numbers[i];
+            }
+            answer[0] = numbers[numbers.length -1];
+        }else {
+            for(int i = 0; i < answer.length - 1; i++){
+                answer[i] = numbers[i + 1];
+            }
+            answer[answer.length - 1] = numbers[0];
+        }
+        return answer;
+    }
 }
