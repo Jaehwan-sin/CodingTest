@@ -1,5 +1,7 @@
 package org.test.day10_20;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Stack;
 
 public class day13 {
@@ -47,6 +49,40 @@ public class day13 {
         for (int i = 0; i < answer.length; i++) {
             answer[i] = strlist[i].length();
         }
+        return answer;
+    }
+
+    // 문자열 my_string이 매개변수로 주어집니다.
+    // my_string에서 중복된 문자를 제거하고 하나의 문자만 남긴 문자열을 return하도록 solution 함수를 완성해주세요.
+    public String solution3 (String my_string) {
+        HashSet<Character> seen = new HashSet<>();
+        StringBuilder result = new StringBuilder();
+
+        for (char c : my_string.toCharArray()) {
+            if (!seen.contains(c)) {
+                result.append(c);
+                seen.add(c);
+            }
+        }
+
+        return result.toString();
+    }
+
+    // 선분 세 개로 삼각형을 만들기 위해서는 다음과 같은 조건을 만족해야 합니다.
+    // 가장 긴 변의 길이는 다른 두 변의 길이의 합보다 작아야 합니다.
+    // 삼각형의 세 변의 길이가 담긴 배열 sides이 매개변수로 주어집니다.
+    // 세 변으로 삼각형을 만들 수 있다면 1, 만들 수 없다면 2를 return하도록 solution 함수를 완성해주세요.
+    public int solution(int[] sides) {
+        int answer = 0;
+
+        Arrays.sort(sides);
+
+        if (sides[2] < sides[0] + sides[1]) {
+            answer = 1;
+        } else {
+            answer = 2;
+        }
+
         return answer;
     }
 }
