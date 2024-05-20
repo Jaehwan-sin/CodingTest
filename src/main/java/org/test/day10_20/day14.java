@@ -51,5 +51,17 @@ public class day14 {
 
     // 문자열 my_string이 매개변수로 주어질 때,
     // 대문자는 소문자로 소문자는 대문자로 변환한 문자열을 return하도록 solution 함수를 완성해주세요.
+    public String solution4 (String my_string) {
+        String[] split = my_string.split("");
 
+        for (int i = 0; i < split.length; i++) {
+            if (Character.isLowerCase(split[i].charAt(0))) {
+                split[i] = split[i].toUpperCase();
+            } else {
+                split[i] = split[i].toLowerCase();
+            }
+        }
+
+        return String.join("", split);
+    }
 }
