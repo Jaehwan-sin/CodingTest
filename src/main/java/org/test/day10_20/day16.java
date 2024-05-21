@@ -56,6 +56,7 @@ public class day16 {
 
         int result = Integer.parseInt(split[0]);
 
+        // 인덱스가 홀수인 요소는 연산자, 다음 요소는 연산자의 오른쪽에 있는 숫자
         for (int i = 1; i < split.length; i += 2) {
             String operator = split[i];
             int nextNumber = Integer.parseInt(split[i + 1]);
