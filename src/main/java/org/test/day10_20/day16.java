@@ -1,9 +1,6 @@
 package org.test.day10_20;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class day16 {
 
@@ -71,5 +68,23 @@ public class day16 {
         }
 
         return result;
+    }
+
+    // 두 배열이 얼마나 유사한지 확인해보려고 합니다.
+    // 문자열 배열 s1과 s2가 주어질 때 같은 원소의 개수를 return하도록 solution 함수를 완성해주세요.
+    public int solution4 (String[] s1, String[] s2) {
+        // 동일한 문자를 담아줄 ArrayList 생성
+        List<String> word = new ArrayList<>();
+
+        // s1 을 str1, s2를 str2 에 대입하고 str1,str2를 비교해서 동일한 값이면 word에 저장
+        for (String str1 : s1) {
+            for (String str2 : s2) {
+                if (str1.equals(str2)) {
+                    word.add(str1);
+                }
+            }
+        }
+        // 원소의 개수를 리턴해야하니까 word.size를 리턴한다.
+        return word.size();
     }
 }
