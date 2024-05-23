@@ -46,4 +46,18 @@ public class day17 {
 
         return answer;
     }
+
+    // 정수 n이 매개변수로 주어질 때 n의 각 자리 숫자의 합을 return하도록 solution 함수를 완성해주세요
+    public int solution2 (int n) {
+        int answer = 0;
+        // n 매개변수를 배열에 담아 주기위해 String으로 전환 후 배열로 담아 split한다.
+        String str = Integer.toString(n);
+        String[] arr = str.split("");
+
+        // split한 숫자를 각각 더해서 answer에 추가
+        for(int i = 0; i < arr.length; i++) {
+            answer += Integer.parseInt(arr[i]);
+        }
+        return answer;
+    }
 }
