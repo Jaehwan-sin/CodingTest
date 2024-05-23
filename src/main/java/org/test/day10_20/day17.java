@@ -1,5 +1,7 @@
 package org.test.day10_20;
 
+import java.util.ArrayList;
+
 public class day17 {
 
     // 정수 num과 k가 매개변수로 주어질 때,
@@ -23,5 +25,25 @@ public class day17 {
         return answer;
     }
 
-    //
+    // 정수 n과 정수 배열 numlist가 매개변수로 주어질 때,
+    // numlist에서 n의 배수가 아닌 수들을 제거한 배열을 return하도록 solution 함수를 완성해주세요.
+    public int[] solution(int n, int[] numlist) {
+        // n의 배수가 아닌 수들은 가변적이기 때문에 ArrayList 생성
+        ArrayList<Integer> answerList = new ArrayList<>();
+
+        // numlist[i]를 n 으로 나누어 0이라면 배수이기 때문에 answerList에 추가
+        for (int i = 0; i < numlist.length; i++) {
+            if (numlist[i] % n == 0) {
+                answerList.add(numlist[i]);
+            }
+        }
+
+        // ArrayList를 int 배열로 변환
+        int[] answer = new int[answerList.size()];
+        for (int i = 0; i < answerList.size(); i++) {
+            answer[i] = answerList.get(i);
+        }
+
+        return answer;
+    }
 }
