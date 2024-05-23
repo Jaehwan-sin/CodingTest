@@ -60,4 +60,39 @@ public class day17 {
         }
         return answer;
     }
+
+    // 덧셈, 뺄셈 수식들이 'X [연산자] Y = Z' 형태로 들어있는 문자열 배열 quiz가 매개변수로 주어집니다.
+    // 수식이 옳다면 "O"를 틀리다면 "X"를 순서대로 담은 배열을 return하도록 solution 함수를 완성해주세요.
+    public String[] solution4 (String[] quiz) {
+        // 정답 리턴할 배열 생성
+        String[] answer = new String[quiz.length];
+
+        for (int i = 0; i < quiz.length; i++) {
+            // quiz를 하나의 식으로 나누어 배열에 저장
+            String[] s = quiz[i].split(" ");
+
+            // 식의 1번 인덱스가 +일 경우
+            if (s[1].equals("+")) {
+                // 식의 0,2,4 번째 인덱스는 숫자이기 때문에 + 한 값이 올바른 경우
+                if (Integer.parseInt(s[0]) + Integer.parseInt(s[2]) == Integer.parseInt(s[4])) {
+                    answer[i] = "O";
+                } else {
+                    answer[i] = "X";
+                }
+            }
+
+            // 식의 1번 인덱스가 -일 경우
+            if (s[1].equals("-")) {
+                // 식의 0,2,4 번째 인덱스는 숫자이기 때문에 - 한 값이 올바른 경우
+                if (Integer.parseInt(s[0]) - Integer.parseInt(s[2]) == Integer.parseInt(s[4])) {
+                    answer[i] = "O";
+                } else {
+                    answer[i] = "X";
+                }
+            }
+        }
+
+        return answer;
+
+    }
 }
