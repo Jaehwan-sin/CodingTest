@@ -9,14 +9,14 @@ public class day20 {
     // 직사각형의 넓이를 return 하도록 solution 함수를 완성해보세요.
     public int solution(int[][] dots) {
         int answer = 0;
-        int w = 0;
-        int h = 0;
+        int w = 0; // 길이
+        int h = 0; // 높이
         int x = dots[0][0];
         int y = dots[0][1];
 
         for (int i = 1; i < dots.length; i++) {
             if (x != dots[i][0]) {
-                w = Math.abs(x - dots[i][0]);
+                w = Math.abs(x - dots[i][0]); // -값이 있을 수 있으므로 절대값 사용
             }
             if (y != dots[i][1]) {
                 h = Math.abs(y - dots[i][1]);
@@ -67,6 +67,7 @@ public class day20 {
     public int solution3 (int[] numbers) {
         int answer = Integer.MIN_VALUE;
 
+        // 가능한 조합의 두 쌍을 조합해 곱을 다 계산해서 맥스값 구하기
         for (int i = 0; i < numbers.length;  i++) {
             for (int j = i+1; j < numbers.length; j++) {
                 int product = numbers[i] * numbers[j];
@@ -82,8 +83,10 @@ public class day20 {
     public int solution3_1 (int[] numbers) {
         int answer = 0;
 
+        // 배열 정렬
         Arrays.sort(numbers);
 
+        // 가장 작은 두 수의 곱과 가장 큰 두 수의 곱 중 최댓값 계산
         int edge1 = numbers[0]*numbers[1];
         int edge2 = numbers[numbers.length-2]*numbers[numbers.length-1];
 
@@ -99,23 +102,27 @@ public class day20 {
     public String solution4 (String polynomial) {
         String answer = "";
 
+        // 문제에 변수는 x만 존재하고 항이랑 연산기호 사이에는 항상 공백이 존재한다.
         String[] strArr = polynomial.split(" \\+ ");
 
+        // count[0]은 x 계수 합, count[1]은 상수 합
         int[] count = new int[2];
 
         for(String str : strArr){
             if(str.contains("x")){
-                str = str.replace("x", "");
-                count[0] += str.equals("") ? 1 : Integer.parseInt(str);
+                str = str.replace("x", ""); // x를 제거하고 상수만 남긴다.
+                count[0] += str.equals("") ? 1 : Integer.parseInt(str); // x는 1로 처리하여 계산
             }else{
-                count[1] += Integer.parseInt(str);
+                count[1] += Integer.parseInt(str); // 상수 계산
             }
         }
 
+        // x의 계수가 0이 아닌 경우
         if(count[0] > 0){
             answer += count[0] == 1 ? "x" : count[0] + "x";
         }
 
+        // 상수가 0이 아닌 경우
         if(answer.length() > 0 && count[1] > 0){
             answer += " + ";
         }
