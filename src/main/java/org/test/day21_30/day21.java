@@ -86,5 +86,26 @@ public class day21 {
         return answer;
     }
 
-    // PROGRAMMERS-962 행성에 불시착한 우주비행사 머쓱이는 외계행성의 언어를 공부하려고 합니다. 알파벳이 담긴 배열 spell과 외계어 사전 dic이 매개변수로 주어집니다. spell에 담긴 알파벳을 한번씩만 모두 사용한 단어가 dic에 존재한다면 1, 존재하지 않는다면 2를 return하도록 solution 함수를 완성해주세요.
+    // PROGRAMMERS-962 행성에 불시착한 우주비행사 머쓱이는 외계행성의 언어를 공부하려고 합니다.
+    // 알파벳이 담긴 배열 spell과 외계어 사전 dic이 매개변수로 주어집니다.
+    // spell에 담긴 알파벳을 한번씩만 모두 사용한 단어가 dic에 존재한다면 1,
+    // 존재하지 않는다면 2를 return하도록 solution 함수를 완성해주세요.
+    public int solution(String[] spell, String[] dic) {
+        boolean wordCheck = false;
+
+        // dic의 단어를 word에 담고 spell의 단어를 s에 담고
+        // word에 s의 단어를 포함한다면 count를 증가시킨다.
+        for (String word : dic) {
+            int count = 0;
+            for (String s : spell) {
+                if (word.contains(s)) count++;
+            }
+            // word가 spell의 모든 단어 포함한다면
+            if (count == spell.length) {
+                wordCheck = true;
+                break;
+            }
+        }
+        return wordCheck ? 1 : 2;
+    }
 }
