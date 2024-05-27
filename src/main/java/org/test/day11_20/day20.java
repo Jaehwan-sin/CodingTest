@@ -1,4 +1,4 @@
-package org.test.day10_20;
+package org.test.day11_20;
 
 import java.util.Arrays;
 
@@ -37,8 +37,8 @@ public class day20 {
         int x = 0;
         int y = 0;
 
-        int xLimit = (board[0] - 1) / 2;
-        int yLimit = (board[1] - 1) / 2;
+        int xLimit = (board[0] - 1) / 2; // x의 한계
+        int yLimit = (board[1] - 1) / 2; // y의 한계
 
         for (String key : keyinput) {
             switch (key) {
