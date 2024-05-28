@@ -109,7 +109,7 @@ public class day22 {
             }else if (finalB % 5 == 0) {
                 finalB /= 5;
             }else {
-                return 2;
+                return 2; 
             }
         }
 
