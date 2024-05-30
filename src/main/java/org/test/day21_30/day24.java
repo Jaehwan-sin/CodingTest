@@ -1,5 +1,7 @@
 package org.test.day21_30;
 
+import java.util.Arrays;
+
 public class day24 {
 
     // 프로그래머스 치킨은 치킨을 시켜먹으면 한 마리당 쿠폰을 한 장 발급합니다.
@@ -23,5 +25,21 @@ public class day24 {
         int num2 = Integer.parseInt(bin2,2);
 
         return Integer.toBinaryString(num1+num2);
+    }
+
+    // 문자열 before와 after가 매개변수로 주어질 때,
+    // before의 순서를 바꾸어 after를 만들 수 있으면 1을,
+    // 만들 수 없으면 0을 return 하도록 solution 함수를 완성해보세요.
+    public int solution(String before, String after) {
+        char[] arr1 = before.toCharArray();
+        char[] arr2 = after.toCharArray();
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        String str1 = new String(arr1);
+        String str2 = new String(arr2);
+
+        return str1.equals(str2) ? 1 : 0;
     }
 }
