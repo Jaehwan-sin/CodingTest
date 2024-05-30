@@ -20,7 +20,7 @@ public class day24 {
 
     // 이진수를 의미하는 두 개의 문자열 bin1과 bin2가 매개변수로 주어질 때,
     // 두 이진수의 합을 return하도록 solution 함수를 완성해주세요.
-    public String solution(String bin1, String bin2) {
+    public String solution2 (String bin1, String bin2) {
         int num1 = Integer.parseInt(bin1,2);
         int num2 = Integer.parseInt(bin2,2);
 
@@ -30,7 +30,7 @@ public class day24 {
     // 문자열 before와 after가 매개변수로 주어질 때,
     // before의 순서를 바꾸어 after를 만들 수 있으면 1을,
     // 만들 수 없으면 0을 return 하도록 solution 함수를 완성해보세요.
-    public int solution(String before, String after) {
+    public int solution3 (String before, String after) {
         char[] arr1 = before.toCharArray();
         char[] arr2 = after.toCharArray();
 
@@ -42,4 +42,9 @@ public class day24 {
 
         return str1.equals(str2) ? 1 : 0;
     }
+
+    // 1부터 13까지의 수에서, 1은 1, 10, 11, 12, 13 이렇게 총 6번 등장합니다.
+    // 정수 i, j, k가 매개변수로 주어질 때,
+    // i부터 j까지 k가 몇 번 등장하는지 return 하도록 solution 함수를 완성해주세요.
+
 }
