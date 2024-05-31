@@ -65,9 +65,9 @@ public class day25 {
         int y = common[2] - common[1];
 
         if (x == y) {
-            answer = common[common.length - 1] + y;
+            answer = common[common.length - 1] + y; // 등차수열일 경우
         } else {
-            answer = common[common.length - 1] * common[2] / common[1];
+            answer = common[common.length - 1] * common[2] / common[1]; // 등비수열일 경우
         }
 
         return answer;
