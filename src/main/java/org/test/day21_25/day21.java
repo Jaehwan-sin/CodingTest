@@ -1,4 +1,4 @@
-package org.test.day21_30;
+package org.test.day21_25;
 
 import java.util.ArrayList;
 import java.util.Arrays;
