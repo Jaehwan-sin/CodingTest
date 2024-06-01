@@ -1,7 +1,4 @@
-package org.test.day21_30;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+package org.test.day21_25;
 
 public class day22 {
 
