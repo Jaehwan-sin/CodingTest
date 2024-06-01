@@ -1,4 +1,4 @@
-package org.test.day21_30;
+package org.test.day21_25;
 
 public class day25 {
 
