@@ -63,7 +63,7 @@ public class day4 {
         } else if (ineq.equals("<") && eq.equals("!")) {
             answer = n < m ? 1 : 0;
         }
-
+ 
         return answer;
     }
 }
