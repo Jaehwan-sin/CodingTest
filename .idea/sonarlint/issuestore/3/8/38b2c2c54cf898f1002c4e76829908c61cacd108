@@ -1,0 +1,21 @@
+
+>
+java:S16430"Use a StringBuilder instead.(Ç¶Øöıÿÿÿÿ8¯‹‰“ı1
+>
+java:S16432"Use a StringBuilder instead.(İÖ«¨úÿÿÿÿ8¯‹‰“ı1
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ş×„8õ€¸’ı1
+L	java:S106"+Replace this use of System.out by a logger.(æ¨¤šøÿÿÿÿ8Ê¸»’ı1
+M
+java:S1172"+Remove this unused method parameter "args".(üÎÆıÿÿÿÿ8è®Å’ı1
+L	java:S106"+Replace this use of System.out by a logger.(ŞªìÈÿÿÿÿÿ8÷–Å’ı1
+G	java:S106"+Replace this use of System.out by a logger.(‘ÙëÚ8÷–Å’ı1
+H
+java:S1172"+Remove this unused method parameter "args".(¸ó€Æ8ªÖ…“ı1
+G	java:S106""+Replace this use of System.out by a logger.(…Ÿ¥’8§Á…“ı1
+H
+java:S1172("+Remove this unused method parameter "args".(Ú¼Øú8¾‹‰“ı1
+L	java:S1065"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8¿‹‰“ı1
+H
+java:S1172:"+Remove this unused method parameter "args".(’Èî8ËİŒ“ı1
+]	java:S1259"<This block of commented-out lines of code should be removed.( õˆ¡ıÿÿÿÿ8¬á‹“ı1
+G	java:S106;"+Replace this use of System.out by a logger.(é·ÀÂ8–´Œ“ı1

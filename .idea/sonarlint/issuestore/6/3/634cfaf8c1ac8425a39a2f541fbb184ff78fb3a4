@@ -1,0 +1,6 @@
+
+€
+java:S1488<"^Immediately return this expression instead of assigning it to the temporary variable "answer".(ÀÇíŞùÿÿÿÿ8€Şû1
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Èâ›ûÿÿÿÿ8”íÛû1
+>	java:S131,""Add a default case to this switch.(°Ó÷8¼Şû1
+o	java:S100S"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íòÒùÿÿÿÿ8¥íÛû1

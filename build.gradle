@@ -1,6 +1,7 @@
 // build.gradle
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'com.example'

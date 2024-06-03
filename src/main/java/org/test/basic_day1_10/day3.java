@@ -2,16 +2,22 @@ package org.test.basic_day1_10;
 
 import java.util.Scanner;
 
-public class day2 {
+public class day3 {
 
-    // 두 정수 a, b가 주어질 때 다음과 같은 형태의 계산식을 출력하는 코드를 작성해 보세요.
-    // a + b = c
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
+    // 길이가 같은 두 문자열 str1과 str2가 주어집니다.
+    // 두 문자열의 각 문자가 앞에서부터 서로 번갈아가면서 한 번씩 등장하는 문자열을 만들어 return 하는 solution 함수를 완성해 주세요.
+    public String solution(String str1, String str2) {
+        String answer = "";
 
-        System.out.println(a + " + " + b + " = " + (a + b));
+        String[] split1 = str1.split("");
+        String[] split2 = str2.split("");
+
+        for (int i = 0; i < split1.length; i++) {
+            answer += split1[i];
+            answer += split2[i];
+        }
+
+        return answer;
     }
 
     // 두 개의 문자열 str1, str2가 공백으로 구분되어 입력으로 주어집니다.
