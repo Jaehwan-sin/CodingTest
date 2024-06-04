@@ -16,31 +16,11 @@ public class day5 {
     public String solution (String code) {
         String answer = "";
         int mode = 0;
-
         for (int i = 0; i < code.length(); i++) {
-            if (code.charAt(i) == '1' && mode == 0) {
-                mode = 1;
-            } else if (code.charAt(i) == '1' && mode == 1) {
-                mode = 0;
-            }
-
-            if (mode == 0) {
-                if (code.charAt(i) != '1' && i % 2 == 0) {
-                    answer += code.charAt(i);
-                } else if (mode == 1) {
-                    if (code.charAt(i) != '1' && i % 2 != 0) {
-                        answer += code.charAt(i);
-                    }
-                }
-            }
-
-            if (answer.isEmpty()) {
-                return "EMPTY";
-            }
-
+            if (code.charAt(i) == '1') mode = 1 - mode;
+            else if (i % 2 == mode) answer += code.charAt(i);
         }
-        return answer;
-
+        return "".equals(answer) ? "EMPTY" : answer;
     }
 
     // 두 정수 a, d와 길이가 n인 boolean 배열 included가 주어집니다.
