@@ -1,6 +1,7 @@
 package org.test.basic_day1_10;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class day6 {
@@ -76,5 +77,31 @@ public class day6 {
         }
 
         return sb.toString();
+    }
+
+    // 정수 배열 arr와 2차원 정수 배열 queries이 주어집니다.
+    // queries의 원소는 각각 하나의 query를 나타내며, [i, j] 꼴입니다.
+    // 각 query마다 순서대로 arr[i]의 값과 arr[j]의 값을 서로 바꿉니다.
+    // 위 규칙에 따라 queries를 처리한 이후의 arr를 return 하는 solution 함수를 완성해 주세요.
+    public int[] solution4 (int[] arr, int[][] queries) {
+        int n = 0;
+
+        for (int i = 0; i < queries.length; i++) {
+            n = arr[queries[i][0]];
+            arr[queries[i][0]] = arr[queries[i][1]];
+            arr[queries[i][1]] = n;
+        }
+
+        return arr;
+    }
+
+    // 정수 배열 arr와 2차원 정수 배열 queries이 주어집니다.
+    // queries의 원소는 각각 하나의 query를 나타내며, [s, e, k] 꼴입니다.
+    // 각 query마다 순서대로 s ≤ i ≤ e인 모든 i에 대해 k보다 크면서 가장 작은 arr[i]를 찾습니다.
+    // 각 쿼리의 순서에 맞게 답을 저장한 배열을 반환하는 solution 함수를 완성해 주세요.
+    // 단, 특정 쿼리의 답이 존재하지 않으면 -1을 저장합니다.
+    public int[] solution5 (int[] arr, int[][] queries) {
+        int[] answer = {};
+        return answer;
     }
 }
