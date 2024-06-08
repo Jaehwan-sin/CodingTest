@@ -60,4 +60,56 @@ public class day8 {
         // 네 숫자가 모두 다른 경우
         return Math.min(Math.min(a, b), Math.min(c, d));
     }
+
+    // 문자열 my_string과 정수 배열 index_list가 매개변수로 주어집니다.
+    // my_string의 index_list의 원소들에 해당하는 인덱스의 글자들을 순서대로 이어 붙인 문자열을 return 하는 solution 함수를 작성해 주세요.
+    public String solution(String my_string, int[] index_list) {
+        StringBuilder answer = new StringBuilder();
+
+        for (int index : index_list) {
+            answer.append(my_string.charAt(index));
+        }
+
+        return answer.toString();
+    }
+
+    // 음이 아닌 정수를 9로 나눈 나머지는 그 정수의 각 자리 숫자의 합을 9로 나눈 나머지와 같은 것이 알려져 있습니다.
+    // 이 사실을 이용하여 음이 아닌 정수가 문자열 number로 주어질 때, 이 정수를 9로 나눈 나머지를 return 하는 solution 함수를 작성해주세요.
+    public int solution(String number) {
+        int answer = 0;
+        int plus = 0;
+
+        String[] split = number.split("");
+
+        for (int i = 0; i < split.length; i++) {
+            plus += Integer.parseInt(split[i]);
+        }
+
+        answer = plus % 9;
+        return answer;
+    }
+
+    // 문자열 my_string과 이차원 정수 배열 queries가 매개변수로 주어집니다.
+    // queries의 원소는 [s, e] 형태로, my_string의 인덱스 s부터 인덱스 e까지를 뒤집으라는 의미입니다.
+    // my_string에 queries의 명령을 순서대로 처리한 후의 문자열을 return 하는 solution 함수를 작성해 주세요.
+    public String solution(String my_string, int[][] queries) {
+        char[] arr = my_string.toCharArray();
+
+        for (int[] query : queries) {
+            int start = query[0];
+            int end = query[1];
+
+            while (start < end) {
+                char temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+
+                start++;
+                end--;
+
+            }
+        }
+
+        return new String(arr);
+    }
 }
