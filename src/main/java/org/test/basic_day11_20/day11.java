@@ -19,7 +19,7 @@ public class day11 {
             if (ch >= 'A' && ch <= 'Z') {
                 answer[ch - 'A']++;
             } else if (ch >= 'a' && ch <= 'z') {
-                answer[ch - 'a' + 26]++;
+                answer[ch - 'a' + 26]++; 
             } 
         }
 
