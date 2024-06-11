@@ -20,7 +20,7 @@ public class day11 {
                 answer[ch - 'A']++;
             } else if (ch >= 'a' && ch <= 'z') {
                 answer[ch - 'a' + 26]++;
-            }
+            } 
         }
 
         return answer;
