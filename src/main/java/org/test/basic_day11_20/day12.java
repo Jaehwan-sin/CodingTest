@@ -1,6 +1,7 @@
 package org.test.basic_day11_20;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class day12 {
@@ -47,7 +48,7 @@ public class day12 {
     // 정수 리스트 num_list가 주어질 때,
     // 첫 번째로 나오는 음수의 인덱스를 return하도록 solution 함수를 완성해주세요.
     // 음수가 없다면 -1을 return합니다.
-    public int solution(int[] num_list) {
+    public int solution2 (int[] num_list) {
         int answer = 0;
 
         for (int i = 0; i < num_list.length; i++) {
@@ -91,5 +92,50 @@ public class day12 {
         return answer;
     }
 
-    
+    // 정수 배열 arr가 주어집니다.
+    // 배열 안의 2가 모두 포함된 가장 작은 연속된 부분 배열을 return 하는 solution 함수를 완성해 주세요.
+    // 단, arr에 2가 없는 경우 [-1]을 return 합니다.
+    public int[] solution(int[] arr) {
+        // 초기값으로 배열의 길이보다 큰 값을 가진 변수를 설정
+        int firstIndex = 100000, lastIndex = 0;
+
+        // 배열을 순회하면서 숫자 2가 나타나는 첫 인덱스와 마지막 인덱스를 찾음
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 2) {
+                firstIndex = Math.min(firstIndex, i);
+                lastIndex = Math.max(lastIndex, i);
+            }
+        }
+        // 만약 숫자 2가 배열 안에 존재한다면 해당 부분 배열을 반환
+        if (firstIndex <= lastIndex) {
+            return Arrays.copyOfRange(arr, firstIndex, lastIndex + 1);
+        } else {    //  그렇지 않다면 {-1}을 반환
+            return new int[]{-1};
+        }
+    }
+
+    // 정수 배열 arr와 query가 주어집니다.
+    // query를 순회하면서 다음 작업을 반복합니다.
+    // 짝수 인덱스에서는 arr에서 query[i]번 인덱스를 제외하고 배열의 query[i]번 인덱스 뒷부분을 잘라서 버립니다.
+    // 홀수 인덱스에서는 arr에서 query[i]번 인덱스는 제외하고 배열의 query[i]번 인덱스 앞부분을 잘라서 버립니다.
+    // 위 작업을 마친 후 남은 arr의 부분 배열을 return 하는 solution 함수를 완성해 주세요.
+    public int[] solution(int[] arr, int[] query) {
+        int start = 0;
+        int end = arr.length;
+
+        for (int i = 0; i < query.length; i++) {
+            if (i % 2 == 0) {
+                // 짝수 인덱스: arr에서 query[i] 번 인덱스를 제외하고 그 뒤의 부분을 자름
+                end = start + query[i] + 1;
+            } else {
+                // 홀수 인덱스: arr에서 query[i] 번 인덱스를 제외하고 그 앞의 부분을 자름
+                start = start + query[i];
+            }
+        }
+
+        // 부분 배열 생성
+        int[] answer = Arrays.copyOfRange(arr, start, end);
+
+        return answer;
+    }
 }
