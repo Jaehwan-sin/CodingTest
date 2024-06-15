@@ -82,7 +82,24 @@ public class day15 {
 
     // 정수가 담긴 리스트 num_list가 주어질 때,
     // 리스트의 길이가 11 이상이면 리스트에 있는 모든 원소의 합을 10 이하이면 모든 원소의 곱을 return하도록 solution 함수를 완성해주세요.
+    public int solution4 (int[] num_list) {
+        int answer = 0;
 
+        if (num_list.length >= 11) {
+            for (int i = 0; i < num_list.length; i++) {
+                answer += num_list[i];
+            }
+        } else if (num_list.length <= 10) {
+            answer = 1;
+            for (int i = 0; i < num_list.length; i++) {
+                answer *= num_list[i];
+
+            }
+        }
+
+        return answer;
+    }
+    
     // 알파벳으로 이루어진 문자열 myString과 pat이 주어집니다.
     // myString의 연속된 부분 문자열 중 pat이 존재하면 1을 그렇지 않으면 0을 return 하는 solution 함수를 완성해 주세요.
     // 단, 알파벳 대문자와 소문자는 구분하지 않습니다.
