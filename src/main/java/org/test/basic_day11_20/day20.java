@@ -75,4 +75,65 @@ public class day20 {
 
         return maxCount;
     }
+
+    // 정수 배열 arr과 정수 n이 매개변수로 주어집니다.
+    // arr의 길이가 홀수라면 arr의 모든 짝수 인덱스 위치에 n을 더한 배열을,
+    // arr의 길이가 짝수라면 arr의 모든 홀수 인덱스 위치에 n을 더한 배열을 return 하는 solution 함수를 작성해 주세요.
+    public int[] solution4 (int[] arr, int n) {
+        int[] answer = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr.length % 2 != 0) {  // 배열의 길이가 홀수인 경우
+                if (i % 2 == 0) {  // 짝수 인덱스에 n 더하기
+                    answer[i] = arr[i] + n;
+                } else {
+                    answer[i] = arr[i];
+                }
+            } else {  // 배열의 길이가 짝수인 경우
+                if (i % 2 != 0) {  // 홀수 인덱스에 n 더하기
+                    answer[i] = arr[i] + n;
+                } else {
+                    answer[i] = arr[i];
+                }
+            }
+        }
+
+        return answer;
+    }
+
+    // 다른 풀이
+    public int[] solution4_1  (int[] arr, int n) {
+        for (int i = arr.length - 1; i >= 0; i -= 2) {
+            arr[i] += n;
+        }
+        return arr;
+    }
+
+    // 정수로 이루어진 리스트 num_list가 주어집니다.
+    // num_list에서 가장 작은 5개의 수를 오름차순으로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+    public int[] solution5 (int[] num_list) {
+        ArrayList<Integer> list = new ArrayList<>();
+        Arrays.sort(num_list); // 배열 정렬
+
+        // 배열의 인덱스 0번부터 4번까지 list에 추가
+        for (int i = 0; i <= 4; i++) {
+            list.add(num_list[i]);
+        }
+
+        // list에 담긴 값 배열에 추가 후 리턴
+        int[] answer = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+
+        return answer;
+    }
+
+    // 다른 풀이
+    public int[] solution5_1 (int[] num_list) {
+        Arrays.sort(num_list); // 배열 정렬
+
+        // 배열을 복사(배열, 0번째부터, 5번째까지)
+        return Arrays.copyOfRange(num_list, 0, 5);
+    }
 }
