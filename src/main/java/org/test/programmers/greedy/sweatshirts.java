@@ -20,7 +20,7 @@ public class sweatshirts {
         int n = 5;
         int[] lost = {2, 4};
         int[] reserve = {1, 3, 5};
-        int answer = 0;
+        int answer = 0; 
 
         // 정렬된 배열을 사용하면 편리합니다.
         Arrays.sort(lost);
