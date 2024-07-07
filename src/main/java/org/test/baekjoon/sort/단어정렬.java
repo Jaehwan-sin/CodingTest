@@ -13,7 +13,7 @@ public class 단어정렬 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        int N = in.nextInt();
+        int N = in.nextInt(); 
         if (N <= 0) {
             System.out.println("");
             return;
