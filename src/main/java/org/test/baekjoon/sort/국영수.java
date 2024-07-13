@@ -20,7 +20,7 @@ public class 국영수 {
     public class Main {
 
         // 학생 클래스 정의
-        static class Student {
+        static class Student { 
             String name;
             int kor; 
             int eng;
