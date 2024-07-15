@@ -21,7 +21,7 @@ public class 프로세스 {
             PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
             int answer = 0;
 
-            // 우선순위 큐에 우선순위 요소 추가
+            // 우선순위 큐에 우선순위 요소 추가 
             for (int i : priorities) {
                 queue.offer(i);
             }
