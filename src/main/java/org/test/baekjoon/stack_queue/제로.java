@@ -17,7 +17,7 @@ public class 제로 {
         Stack<Integer> stack = new Stack<>(); // 값을 담을 스택 생성
 
         // for문으로 입력받은 값 stack에 추가
-        for (int i = 0; i < K; i++) {
+        for (int i = 0; i < K; i++) { 
             int number = sc.nextInt();
 
             // 입력 값이 0 이면 최근 값 제거, 나머진 그대로 stack에 추가
