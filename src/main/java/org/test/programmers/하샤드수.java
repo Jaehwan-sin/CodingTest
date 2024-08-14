@@ -12,7 +12,7 @@ public class 하샤드수 {
     public boolean solution(int x) {
         int num = 0;
         boolean answer = true;
-        String s = String.valueOf(x);
+        String s = String.valueOf(x); 
 
         String[] split = s.split("");
 
