@@ -12,7 +12,7 @@ public class 핸드폰번호가리기 {
         StringBuilder hiddenPart = new StringBuilder();
 
         // 뒤에 4개 빼고 *로 대체
-        for (int i = 0; i < length - 4; i++) {
+        for (int i = 0; i < length - 4; i++) { 
             hiddenPart.append("*");
         }
 
