@@ -22,8 +22,6 @@ public class 달리기경주 {
             ranking.put(players[i], i);
         }
 
-
-
         //경주 진행
         for (String player : callings) {
             //1) player의 이름에 해당하는 value를 저장한다.
