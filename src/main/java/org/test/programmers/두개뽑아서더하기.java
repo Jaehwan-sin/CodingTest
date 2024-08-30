@@ -14,7 +14,7 @@ public class 두개뽑아서더하기 {
         for (int i = 0; i < numbers.length; i++) {
             for (int j = i + 1; j < numbers.length; j++) {  // j는 i+1부터 시작하여 같은 인덱스를 사용하지 않도록 함
                 int sum = numbers[i] + numbers[j];
-                resultSet.add(sum);  
+                resultSet.add(sum);
             }
         }
 
